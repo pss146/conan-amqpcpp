@@ -4,7 +4,7 @@ from conans import ConanFile, CMake, tools
 
 class AmqpcppConan(ConanFile):
     name = "amqpcpp"
-    version = "4.1.5"
+    version = "4.1.6"
     url = "https://github.com/pss146/conan-amqpcpp"
     author = "stat.perepel@gmail.com"
     homepage = "https://github.com/CopernicaMarketingSoftware/AMQP-CPP"
@@ -23,7 +23,7 @@ class AmqpcppConan(ConanFile):
         return int(self.version.split('.')[0])
 
     def source(self):
-        checksum = "9840c7fb17bb0c0b601d269e528b7f9cac5ec008dcf8d66bef22434423b468aa"
+        checksum = "48832068dc1e25a5313dd9e96fb33ba954c19f9dc04eeca8f7b2c6cecde3afc9"
         tools.get("https://github.com/CopernicaMarketingSoftware/AMQP-CPP/archive/v{}.tar.gz".format(self.version), sha256=checksum)
         os.rename("AMQP-CPP-" + self.version, self._source_subfolder)
         os.rename(os.path.join(self._source_subfolder, "CMakeLists.txt"), os.path.join(self._source_subfolder, "CMakeListsOriginal.txt"))
