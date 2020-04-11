@@ -52,7 +52,7 @@ jobs:
 # MacOS builds
 - job: macOS
   pool:
-    vmImage: 'macOS-10.15'
+    vmImage: 'macOS-10.14'
   timeoutInMinutes: 120
   steps:
   - script: |
@@ -73,11 +73,12 @@ jobs:
   strategy:
     matrix:
       CLANG10.0:
+        XCODE_VERSION: 10.3
         CONAN_APPLE_CLANG_VERSIONS: 10.0
-        XCODE_VERSION: 11.3.1
       CLANG11.0:
+        XCODE_VERSION: 11.3.1
         CONAN_APPLE_CLANG_VERSIONS: 11.0
-        XCODE_VERSION: 11.4
+  
 
 # Windows builds
 - job: Windows
